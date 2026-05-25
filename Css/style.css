@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+Lao:wdth,wght@75,400;75,700;75,800&display=swap");
+
+:root {
+  --font-title: "Noto Serif Lao Condensed ExtraBold", "Noto Serif Lao", Georgia, serif;
+  --font-body: "Noto Serif Lao Condensed", "Noto Serif Lao", Arial, Helvetica, sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -5,10 +12,34 @@
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
   background: #0b1020;
   color: white;
-  line-height: 1.6;
+  line-height: 1.65;
+  font-optical-sizing: auto;
+}
+
+h1,
+h2,
+h3,
+.logo,
+.section-title,
+.hero-card h3,
+.about-hero-panel strong {
+  font-family: var(--font-title);
+  font-weight: 800;
+  font-stretch: 75%;
+  letter-spacing: 0;
+}
+
+p,
+a,
+li,
+button,
+input,
+textarea {
+  font-family: var(--font-body);
+  font-stretch: 75%;
 }
 
 /* NAVBAR */
@@ -33,16 +64,55 @@ body {
   color: #ffd700;
 }
 
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+}
+
 nav a {
   text-decoration: none;
   color: white;
-  margin-left: 30px;
   font-weight: 500;
   transition: 0.3s;
 }
 
 nav a:hover {
   color: #ffd700;
+}
+
+.language-link {
+  padding: 8px 14px;
+  border: 1px solid rgba(255,215,0,0.55);
+  border-radius: 999px;
+  color: #ffd700;
+}
+
+.language-link:hover {
+  background: #ffd700;
+  color: black;
+}
+
+html[lang="lo"] body {
+  font-family: var(--font-body);
+  line-height: 1.85;
+}
+
+html[lang="lo"] h1,
+html[lang="lo"] h2,
+html[lang="lo"] h3,
+html[lang="lo"] .about-hero-panel strong,
+html[lang="lo"] .section-title {
+  font-family: var(--font-title);
+  font-weight: 800;
+  line-height: 1.32;
+}
+
+html[lang="lo"] p,
+html[lang="lo"] li {
+  line-height: 1.9;
 }
 
 /* HERO SECTION */
@@ -219,6 +289,10 @@ nav a:hover {
   .navbar {
     flex-direction: column;
     gap: 20px;
+  }
+
+  nav {
+    justify-content: center;
   }
 
 }
