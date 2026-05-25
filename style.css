@@ -1,0 +1,468 @@
+/* ==========================================================================
+   SETTING AREA — Edit all design tokens here
+   ========================================================================== */
+:root {
+
+  /* --- Brand Colors --- */
+  --color-gold:          #ecc94b;
+  --color-gold-hover:    #d69e2e;
+  --color-navy-deep:     #0b1d3a;
+  --color-navy-mid:      #1a365d;
+  --color-accent-blue:   #007bff;
+
+  /* --- Text Colors --- */
+  --color-text-dark:     #1a202c;
+  --color-text-body:     #2d3748;
+  --color-text-muted:    #4a5568;
+  --color-text-light:    #cbd5e0;
+  --color-text-lighter:  #e2e8f0;
+  --color-text-white:    #ffffff;
+  --color-text-footer:   #718096;
+
+  /* --- Backgrounds --- */
+  --color-bg-page:       #f7fafc;
+  --color-bg-card:       #ffffff;
+  --color-bg-footer:     #071224;
+  --color-bg-dark-feat:  rgba(255, 255, 255, 0.03);
+  --color-bg-hero-card:  rgba(255, 255, 255, 0.07);
+  --color-bg-stat:       rgba(255, 255, 255, 0.05);
+
+  /* --- Borders --- */
+  --color-border-card:       #e2e8f0;
+  --color-border-hero-card:  rgba(255, 255, 255, 0.15);
+  --color-border-stat:       rgba(255, 255, 255, 0.05);
+  --color-border-dark-feat:  rgba(255, 255, 255, 0.1);
+  --color-border-footer:     rgba(255, 255, 255, 0.05);
+  --color-border-roadmap:    #ecc94b;
+
+  /* --- Hero gradient --- */
+  --hero-gradient:    linear-gradient(135deg, var(--color-navy-deep) 0%, var(--color-navy-mid) 100%);
+  --cta-gradient:     linear-gradient(135deg, var(--color-navy-mid)  0%, var(--color-navy-deep) 100%);
+
+  /* --- Typography --- */
+  --font-family:      'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  --font-size-xs:     11px;
+  --font-size-sm:     14px;
+  --font-size-base:   15px;
+  --font-size-md:     16px;
+  --font-size-nav:    15px;
+  --font-size-label:  14px;
+  --font-size-card-sub: 14px;
+  --font-size-body:   17px;
+  --font-size-stat:   20px;
+  --font-size-brand:  24px;
+  --font-size-h3:     22px;
+  --font-size-h2-section: 32px;
+  --font-size-h2-dark:    30px;
+  --font-size-hero-h2:    42px;
+  --font-size-roadmap-num: 24px;
+  --font-size-footer:     14px;
+
+  /* --- Spacing --- */
+  --space-xs:    5px;
+  --space-sm:    10px;
+  --space-md:    15px;
+  --space-lg:    20px;
+  --space-xl:    25px;
+  --space-2xl:   30px;
+  --space-3xl:   40px;
+  --space-section: 80px;
+
+  /* --- Layout --- */
+  --max-width:        1200px;
+  --nav-padding-y:    25px;
+  --nav-padding-x:    20px;
+  --hero-padding-top: 60px;
+  --hero-pb:          100px;
+
+  /* --- Border Radius --- */
+  --radius-sm:   8px;
+  --radius-md:   10px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+
+  /* --- Shadows --- */
+  --shadow-card:      0 4px 15px rgba(0, 0, 0, 0.04);
+  --shadow-hero-card: 0 10px 30px rgba(0, 0, 0, 0.2);
+  --shadow-roadmap:   0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+/* ==========================================================================
+   MASTER STRUCTURE & SYSTEM FONTS
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-family);
+}
+
+body {
+  background-color: var(--color-bg-page);
+  color: var(--color-text-body);
+}
+
+/* ==========================================================================
+   HERO CONTAINER WRAPPER & NAVIGATION OVERLAY
+   ========================================================================== */
+.hero-wrapper {
+  background: var(--hero-gradient);
+  width: 100%;
+  position: relative;
+  padding-bottom: var(--hero-pb);
+}
+
+.main-navbar {
+  background-color: transparent;
+  width: 100%;
+  position: relative;
+  z-index: 10;
+}
+
+.nav-container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--nav-padding-y) var(--nav-padding-x);
+}
+
+.logo-brand {
+  text-decoration: none;
+}
+
+.logo-brand h1 {
+  font-size: var(--font-size-brand);
+  font-weight: 800;
+  color: var(--color-gold);
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+
+.nav-menu li {
+  margin-left: 30px;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: var(--color-text-white);
+  font-weight: 600;
+  font-size: var(--font-size-nav);
+  opacity: 0.85;
+  transition: all 0.2s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--color-gold);
+  opacity: 1;
+}
+
+/* ==========================================================================
+   HERO TEXT BLOCK LAYOUT
+   ========================================================================== */
+.home-hero {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--hero-padding-top) var(--nav-padding-x) 0 var(--nav-padding-x);
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-3xl);
+  align-items: center;
+}
+
+.tagline {
+  color: var(--color-gold);
+  font-weight: 700;
+  font-size: var(--font-size-label);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: block;
+  margin-bottom: var(--space-md);
+}
+
+.hero-text h2 {
+  color: var(--color-text-white);
+  font-size: var(--font-size-hero-h2);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: var(--space-lg);
+}
+
+.hero-text p {
+  color: var(--color-text-lighter);
+  font-size: var(--font-size-body);
+  line-height: 1.6;
+  margin-bottom: var(--space-2xl);
+}
+
+/* ==========================================================================
+   FLOATING BUSINESS GROWTH DASHBOARD CARD
+   ========================================================================== */
+.hero-card {
+  background: var(--color-bg-hero-card);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--color-border-hero-card);
+  padding: var(--space-2xl);
+  border-radius: var(--radius-xl);
+  color: var(--color-text-white);
+  box-shadow: var(--shadow-hero-card);
+}
+
+.hero-card h3 {
+  color: var(--color-gold);
+  font-size: var(--font-size-h3);
+  margin-bottom: var(--space-xs);
+}
+
+.card-sub {
+  color: var(--color-text-light);
+  font-size: var(--font-size-card-sub);
+  margin-bottom: var(--space-xl);
+}
+
+.mini-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.mini-stats div {
+  background: var(--color-bg-stat);
+  padding: var(--space-md) var(--space-sm);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border-stat);
+}
+
+.mini-stats strong {
+  display: block;
+  font-size: var(--font-size-stat);
+  color: var(--color-gold);
+  margin-bottom: var(--space-xs);
+}
+
+.mini-stats span {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-lighter);
+  text-transform: uppercase;
+}
+
+/* ==========================================================================
+   BUTTON STYLE FRAMEWORKS
+   ========================================================================== */
+.hero-buttons {
+  display: flex;
+  gap: var(--space-md);
+}
+
+.btn-primary {
+  background-color: var(--color-gold);
+  color: var(--color-navy-deep);
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-gold-hover);
+}
+
+.btn-secondary {
+  border: 2px solid var(--color-text-white);
+  color: var(--color-text-white);
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-text-white);
+  color: var(--color-navy-deep);
+}
+
+/* ==========================================================================
+   WHITE CORE SECTIONS
+   ========================================================================== */
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-section) var(--nav-padding-x);
+}
+
+.section-label {
+  color: var(--color-accent-blue);
+  font-weight: 700;
+  font-size: var(--font-size-label);
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: var(--space-sm);
+}
+
+.section h2 {
+  font-size: var(--font-size-h2-section);
+  color: var(--color-text-dark);
+  margin-bottom: var(--space-3xl);
+  font-weight: 800;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2xl);
+}
+
+.card {
+  background: var(--color-bg-card);
+  padding: var(--space-2xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border-card);
+}
+
+.card h3 {
+  margin-bottom: var(--space-md);
+  color: var(--color-text-dark);
+}
+
+.card p {
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  font-size: var(--font-size-base);
+}
+
+.roadmap {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+}
+
+.roadmap div {
+  background: var(--color-bg-card);
+  padding: var(--space-xl);
+  border-radius: var(--radius-md);
+  border-left: 4px solid var(--color-border-roadmap);
+  box-shadow: var(--shadow-roadmap);
+}
+
+.roadmap h3 {
+  font-size: var(--font-size-roadmap-num);
+  color: var(--color-gold);
+  margin-bottom: var(--space-sm);
+}
+
+.roadmap p {
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   DARK BLOCK SECTION (Why Choose Us)
+   ========================================================================== */
+.dark-section {
+  background-color: var(--color-navy-deep);
+  color: var(--color-text-white);
+  padding: var(--space-section) var(--nav-padding-x);
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  max-width: 100%;
+  align-items: center;
+}
+
+.dark-section-content {
+  max-width: 700px;
+  padding: var(--space-lg);
+}
+
+.section-label.gold {
+  color: var(--color-gold);
+}
+
+.dark-section h2 {
+  font-size: var(--font-size-h2-dark);
+  margin-bottom: var(--space-lg);
+  color: var(--color-text-white);
+}
+
+.dark-section p {
+  color: var(--color-text-light);
+  line-height: 1.7;
+}
+
+.feature-list {
+  background: var(--color-bg-dark-feat);
+  padding: var(--space-3xl);
+  border-left: 1px solid var(--color-border-dark-feat);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.feature-list p {
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  margin-bottom: var(--space-md);
+  color: var(--color-text-lighter);
+}
+
+/* ==========================================================================
+   CALL TO ACTION & FOOTER
+   ========================================================================== */
+.cta {
+  background: var(--cta-gradient);
+  text-align: center;
+  padding: var(--space-section) var(--nav-padding-x);
+  color: var(--color-text-white);
+}
+
+.cta h2 {
+  font-size: var(--font-size-h2-section);
+  margin-bottom: var(--space-sm);
+  color: var(--color-text-white);
+}
+
+.cta p {
+  color: var(--color-text-light);
+  margin-bottom: var(--space-xl);
+}
+
+footer {
+  background-color: var(--color-bg-footer);
+  text-align: center;
+  padding: var(--space-xl);
+  color: var(--color-text-footer);
+  font-size: var(--font-size-footer);
+  border-top: 1px solid var(--color-border-footer);
+}
+
+/* ==========================================================================
+   NAV CTA BUTTON
+   ========================================================================== */
+.nav-cta-btn {
+  background-color: var(--color-gold);
+  color: var(--color-navy-deep) !important;
+  padding: 8px 20px;
+  border-radius: var(--radius-sm);
+  opacity: 1 !important;
+}
+
+.nav-cta-btn:hover {
+  background-color: var(--color-gold-hover);
+}

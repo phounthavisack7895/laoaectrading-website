@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="page-title"></title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div class="hero-wrapper">
+
+  <header class="main-navbar">
+    <nav class="nav-container">
+      <a href="index.html" class="logo-brand">
+        <h1 id="brand-name"></h1>
+      </a>
+      <ul class="nav-menu" id="nav-menu"></ul>
+    </nav>
+  </header>
+
+  <section class="home-hero">
+    <div class="hero-content">
+      <div class="hero-text">
+        <span class="tagline" id="hero-tagline"></span>
+        <h2 id="hero-heading"></h2>
+        <p id="hero-description"></p>
+        <div class="hero-buttons" id="hero-buttons"></div>
+      </div>
+
+      <div class="hero-card">
+        <h3 id="card-title"></h3>
+        <p class="card-sub" id="card-subtitle"></p>
+        <div class="mini-stats" id="mini-stats"></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<section class="section">
+  <span class="section-label" id="services-label"></span>
+  <h2 id="services-heading"></h2>
+  <div class="cards" id="services-cards"></div>
+</section>
+
+<section class="dark-section">
+  <div class="dark-section-content">
+    <span class="section-label gold" id="why-label"></span>
+    <h2 id="why-heading"></h2>
+    <p id="why-description"></p>
+  </div>
+  <div class="feature-list" id="feature-list"></div>
+</section>
+
+<section class="section">
+  <span class="section-label" id="roadmap-label"></span>
+  <h2 id="roadmap-heading"></h2>
+  <div class="roadmap" id="roadmap"></div>
+</section>
+
+<section class="cta">
+  <h2 id="cta-heading"></h2>
+  <p id="cta-description"></p>
+  <a id="cta-button" class="btn-primary"></a>
+</section>
+
+<footer>
+  <p id="footer-text"></p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+/* ============================================================
+   SETTING AREA — Edit all page content here
+   ============================================================ */
+
+const SETTINGS = {
+
+  /* --- Browser tab title --- */
+  pageTitle: "Lao AEC Trading | Smart Trading Solutions",
+
+  /* --- Navigation --- */
+  brandName: "LAO AEC TRADING",
+  navLinks: [
+    { label: "Home",     href: "index.html",    active: true  },
+    { label: "About Us", href: "about.html",    active: false },
+    { label: "Services", href: "services.html", active: false },
+    { label: "Products", href: "products.html", active: false },
+    { label: "Contact",  href: "contact.html",  active: false, cta: true },
+  ],
+
+  /* --- Hero section --- */
+  heroTagline:     "AI-Powered Business • Trading • Marketing",
+  heroHeading:     "Smart Trading Solutions for Future Business",
+  heroDescription: "Lao AEC Trading helps businesses grow through quality products, strong sales execution, smart marketing, and future-ready AI business solutions.",
+  heroButtons: [
+    { label: "Explore Products", href: "products.html", primary: true  },
+    { label: "Contact Us",       href: "contact.html",  primary: false },
+  ],
+
+  /* --- Hero card --- */
+  cardTitle:    "Business Growth Hub",
+  cardSubtitle: "Products • Sales • Marketing • AI Strategy",
+  miniStats: [
+    { value: "360°", label: "Business View"   },
+    { value: "AI",   label: "Future Ready"    },
+    { value: "AEC",  label: "Trading Vision"  },
+  ],
+
+  /* --- Services section --- */
+  servicesLabel:   "What We Do",
+  servicesHeading: "We Build Business Performance",
+  services: [
+    {
+      title: "Product Supply",
+      description: "Reliable product sourcing and supply solutions for businesses, retailers, and distributors.",
+    },
+    {
+      title: "Sales & Marketing",
+      description: "Strategies to increase visibility, customer trust, sales performance, and market growth.",
+    },
+    {
+      title: "AI Business Support",
+      description: "Using AI tools for content, planning, data analysis, automation, and future business advantage.",
+    },
+  ],
+
+  /* --- Why Choose Us section --- */
+  whyLabel:       "Why Choose Us",
+  whyHeading:     "Traditional Trust. Modern Execution. Future Vision.",
+  whyDescription: "We combine practical business discipline with modern digital tools to help partners compete smarter, move faster, and grow stronger in the age of AI.",
+  features: [
+    "Quality product focus",
+    "Sales-driven mindset",
+    "Marketing performance strategy",
+    "AI-powered business development",
+  ],
+
+  /* --- Roadmap section --- */
+  roadmapLabel:   "Business Focus",
+  roadmapHeading: "Our Growth Roadmap",
+  roadmapSteps: [
+    "Build strong product portfolio",
+    "Develop sales and marketing system",
+    "Use AI to improve business performance",
+    "Scale into digital trading ecosystem",
+  ],
+
+  /* --- CTA section --- */
+  ctaHeading:     "Ready to Grow with Lao AEC Trading?",
+  ctaDescription: "Let's build smarter business together.",
+  ctaButton:      { label: "Start Partnership", href: "contact.html" },
+
+  /* --- Footer --- */
+  footerText: "© 2026 Lao AEC Trading Sole Co., Ltd. All rights reserved.",
+};
+
+/* ============================================================
+   Renderer — No editing needed below this line
+   ============================================================ */
+
+document.getElementById("page-title").textContent   = SETTINGS.pageTitle;
+document.getElementById("brand-name").textContent   = SETTINGS.brandName;
+document.getElementById("hero-tagline").textContent  = SETTINGS.heroTagline;
+document.getElementById("hero-heading").textContent  = SETTINGS.heroHeading;
+document.getElementById("hero-description").textContent = SETTINGS.heroDescription;
+document.getElementById("card-title").textContent    = SETTINGS.cardTitle;
+document.getElementById("card-subtitle").textContent = SETTINGS.cardSubtitle;
+document.getElementById("services-label").textContent   = SETTINGS.servicesLabel;
+document.getElementById("services-heading").textContent = SETTINGS.servicesHeading;
+document.getElementById("why-label").textContent       = SETTINGS.whyLabel;
+document.getElementById("why-heading").textContent     = SETTINGS.whyHeading;
+document.getElementById("why-description").textContent = SETTINGS.whyDescription;
+document.getElementById("roadmap-label").textContent   = SETTINGS.roadmapLabel;
+document.getElementById("roadmap-heading").textContent = SETTINGS.roadmapHeading;
+document.getElementById("cta-heading").textContent     = SETTINGS.ctaHeading;
+document.getElementById("cta-description").textContent = SETTINGS.ctaDescription;
+document.getElementById("footer-text").textContent     = SETTINGS.footerText;
+
+// Nav links
+const navMenu = document.getElementById("nav-menu");
+SETTINGS.navLinks.forEach(link => {
+  const li = document.createElement("li");
+  const a  = document.createElement("a");
+  a.href = link.href;
+  a.textContent = link.label;
+  if (link.active) a.classList.add("active");
+  if (link.cta)    a.classList.add("nav-cta-btn");
+  li.appendChild(a);
+  navMenu.appendChild(li);
+});
+
+// Hero buttons
+const heroButtons = document.getElementById("hero-buttons");
+SETTINGS.heroButtons.forEach(btn => {
+  const a = document.createElement("a");
+  a.href = btn.href;
+  a.textContent = btn.label;
+  a.className = btn.primary ? "btn-primary" : "btn-secondary";
+  heroButtons.appendChild(a);
+});
+
+// Mini stats
+const miniStats = document.getElementById("mini-stats");
+SETTINGS.miniStats.forEach(stat => {
+  const div = document.createElement("div");
+  div.innerHTML = `<strong>${stat.value}</strong><span>${stat.label}</span>`;
+  miniStats.appendChild(div);
+});
+
+// Services cards
+const servicesCards = document.getElementById("services-cards");
+SETTINGS.services.forEach(svc => {
+  const div = document.createElement("div");
+  div.className = "card";
+  div.innerHTML = `<h3>${svc.title}</h3><p>${svc.description}</p>`;
+  servicesCards.appendChild(div);
+});
+
+// Feature list
+const featureList = document.getElementById("feature-list");
+SETTINGS.features.forEach(f => {
+  const p = document.createElement("p");
+  p.textContent = "✓ " + f;
+  featureList.appendChild(p);
+});
+
+// Roadmap
+const roadmap = document.getElementById("roadmap");
+SETTINGS.roadmapSteps.forEach((step, i) => {
+  const div = document.createElement("div");
+  div.innerHTML = `<h3>0${i + 1}</h3><p>${step}</p>`;
+  roadmap.appendChild(div);
+});
+
+// CTA button
+const ctaBtn = document.getElementById("cta-button");
+ctaBtn.href = SETTINGS.ctaButton.href;
+ctaBtn.textContent = SETTINGS.ctaButton.label;
+</script>
+</body>
+</html>
