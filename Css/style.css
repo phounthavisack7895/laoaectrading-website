@@ -464,3 +464,326 @@ nav a:hover {
     font-size: 42px;
   }
 }
+
+/* ABOUT PAGE */
+
+.about-hero {
+  min-height: 92vh;
+  padding: 150px 8% 90px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 380px;
+  gap: 55px;
+  align-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 75% 25%, rgba(255,215,0,0.18), transparent 28%),
+    linear-gradient(rgba(5,10,25,0.82), rgba(5,10,25,0.96)),
+    url("https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1600&auto=format&fit=crop")
+    center/cover;
+}
+
+.about-hero-content,
+.about-hero-panel,
+.about-intro,
+.about-statement,
+.strength-card,
+.about-cta {
+  animation: fadeUp 0.9s ease both;
+}
+
+.about-reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.about-reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-hero-content h1 {
+  max-width: 880px;
+  font-size: 66px;
+  line-height: 1.08;
+  margin-bottom: 25px;
+}
+
+.about-hero-content p:last-child {
+  max-width: 760px;
+  color: #d6d6d6;
+  font-size: 20px;
+}
+
+.about-hero-panel {
+  padding: 38px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,215,0,0.28);
+  background: linear-gradient(145deg, rgba(255,255,255,0.11), rgba(255,255,255,0.04));
+  box-shadow: 0 25px 60px rgba(0,0,0,0.38);
+  backdrop-filter: blur(14px);
+  animation-delay: 0.15s;
+}
+
+.about-hero-panel span,
+.about-eyebrow,
+.about-statement span {
+  display: inline-block;
+  color: #ffd700;
+  font-size: 13px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.about-hero-panel strong {
+  display: block;
+  font-size: 34px;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+
+.about-hero-panel p {
+  color: #d6d6d6;
+}
+
+.about-intro {
+  padding: 95px 8%;
+  background: #0b1020;
+  text-align: center;
+}
+
+.about-intro h2 {
+  max-width: 900px;
+  margin: 0 auto 25px;
+  font-size: 46px;
+  line-height: 1.18;
+}
+
+.about-intro p {
+  max-width: 900px;
+  margin: auto;
+  color: #d6d6d6;
+  font-size: 19px;
+}
+
+.about-mission-vision {
+  padding: 100px 8%;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 35px;
+  background:
+    linear-gradient(135deg, rgba(17,24,39,1), rgba(8,12,25,1));
+}
+
+.about-statement {
+  min-height: 390px;
+  padding: 48px;
+  border-radius: 25px;
+  border: 1px solid rgba(255,255,255,0.09);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 18px 45px rgba(0,0,0,0.3);
+}
+
+.about-statement::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,215,0,0.14), transparent 48%);
+  opacity: 0;
+  transition: 0.4s;
+}
+
+.about-statement:hover::before {
+  opacity: 1;
+}
+
+.mission-card {
+  background: #1b2435;
+}
+
+.vision-card {
+  background:
+    linear-gradient(rgba(27,36,53,0.86), rgba(27,36,53,0.94)),
+    url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop")
+    center/cover;
+  animation-delay: 0.12s;
+}
+
+.about-statement h2,
+.about-statement p {
+  position: relative;
+}
+
+.about-statement h2 {
+  font-size: 34px;
+  line-height: 1.22;
+  margin-bottom: 22px;
+}
+
+.about-statement p {
+  color: #d6d6d6;
+  font-size: 18px;
+}
+
+.about-strengths {
+  padding: 100px 8%;
+  background: #111827;
+}
+
+.about-section-heading {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.about-section-heading h2 {
+  font-size: 48px;
+}
+
+.strength-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 25px;
+}
+
+.strength-card {
+  min-height: 310px;
+  padding: 34px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: linear-gradient(180deg, #1b2435, #151d2d);
+  box-shadow: 0 14px 34px rgba(0,0,0,0.24);
+  transition: 0.35s ease;
+}
+
+.strength-card:nth-child(2) {
+  animation-delay: 0.1s;
+}
+
+.strength-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.strength-card:nth-child(4) {
+  animation-delay: 0.3s;
+}
+
+.strength-card:hover {
+  transform: translateY(-12px);
+  border-color: rgba(255,215,0,0.75);
+  box-shadow: 0 24px 55px rgba(0,0,0,0.36);
+}
+
+.strength-number {
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  border-radius: 50%;
+  background: rgba(255,215,0,0.12);
+  color: #ffd700;
+  font-weight: bold;
+  border: 1px solid rgba(255,215,0,0.28);
+}
+
+.strength-card h3 {
+  color: #ffd700;
+  font-size: 25px;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.strength-card p {
+  color: #d6d6d6;
+}
+
+.about-cta {
+  padding: 95px 8%;
+  text-align: center;
+  background:
+    linear-gradient(rgba(5,10,25,0.86), rgba(5,10,25,0.94)),
+    url("https://images.unsplash.com/photo-1521791136064-7986c2920216?q=80&w=1600&auto=format&fit=crop")
+    center/cover;
+}
+
+.about-cta h2 {
+  max-width: 850px;
+  margin: 0 auto 22px;
+  font-size: 46px;
+  line-height: 1.15;
+}
+
+.about-cta p {
+  max-width: 760px;
+  margin: 0 auto 34px;
+  color: #d6d6d6;
+  font-size: 19px;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media(max-width: 1200px) {
+  .strength-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media(max-width: 992px) {
+  .about-hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+  }
+
+  .about-hero-content h1 {
+    font-size: 46px;
+  }
+
+  .about-mission-vision {
+    grid-template-columns: 1fr;
+  }
+
+  .about-intro h2,
+  .about-section-heading h2,
+  .about-cta h2 {
+    font-size: 38px;
+  }
+}
+
+@media(max-width: 640px) {
+  .about-hero {
+    padding-top: 180px;
+  }
+
+  .about-hero-content h1 {
+    font-size: 38px;
+  }
+
+  .about-hero-panel,
+  .about-statement,
+  .strength-card {
+    padding: 28px;
+    border-radius: 18px;
+  }
+
+  .about-statement h2 {
+    font-size: 28px;
+  }
+
+  .strength-grid {
+    grid-template-columns: 1fr;
+  }
+}
